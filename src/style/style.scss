@@ -1,0 +1,151 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+
+
+
+//colors
+$color-1: #1C1C1D; //warna body / footer
+$color-2: #05090C; //warna navbar
+$color-3: #373335;
+$color-4: #1D1D1F;
+$color-5: #707070;
+$color-6: #5B5B5B;
+$color-7: #B89F9F;
+$color-8: #FFD2D2;
+$color-9: #BF9999;
+$color-10: #0071E3;
+$color-11: #0066CC;
+$color-12: #F2F2F2;
+$color-13: #FFFFFF;
+$color-14: #000000;
+
+
+//style
+
+@mixin reset{
+	margin: 0;
+	padding: 0;	
+  ul,ol{
+	list-style: none;
+   }
+  a{
+	text-decoration: none;
+   }
+}
+
+@mixin flex-box($justify-content:null, $align-items:null){
+	display: flex;
+	justify-content: $justify-content;
+	align-items: $align-items;
+}
+
+
+@mixin container($size:null){
+	padding-left: $size;
+	padding-right: $size;
+}
+
+body{
+	@include reset();
+	font-family: 'Roboto', sans-serif;
+	background-color: $color-1;
+	overflow: hidden;
+}
+
+nav{
+	@include flex-box(space-around, center);
+	border:1px solid red;
+	background-color: $color-2;
+	height: 50px;
+	width: 100%;
+	overflow: hidden;
+	.nav-brand{
+		cursor: pointer;
+		img{
+			width: 37px;
+			height: 37px;
+		}
+		img:hover{
+			opacity: 0.5;
+			transition: 0.4s all;	
+		}
+	}
+	.menu-list{
+		display: none;
+		color: $color-13;
+		font-size: 1.8em;
+	}
+	ul{	
+  	@include flex-box(space-between);
+		width: 50%;
+		border: 1px solid salmon;
+		a{
+			color: $color-9;
+			font-size: 1.2em;
+		}
+		a:hover{
+			opacity: 0.5;
+			transition: 0.4s all;
+		}
+	}
+}
+
+/*responsive--> break points*/
+
+
+@media (max-width: 567px){
+	nav{
+		ul{
+			position: absolute;
+			flex-direction: column;
+			top:35px;
+			left: 0;
+			height: 100vh;
+			justify-content: space-evenly;
+			align-items: center;
+			width: 100%;
+			z-index: 10;
+		}
+		.menu-list{
+			display: block;
+		}
+	}
+	
+}
+	
+
+
+@media (max-width: 768px){
+
+}
+
+@media (max-width: 992px){
+
+}
+@media (max-width:1200px){
+	nav{
+	
+		ul{
+			width: 70%;
+		}
+	}
+
+}
+
+/*<div>Icons made by <a href="https://www.flaticon.com/authors/catalin-fertu" title="Catalin Fertu">Catalin Fertu</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
