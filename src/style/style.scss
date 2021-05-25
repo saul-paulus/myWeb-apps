@@ -1,8 +1,6 @@
 //Fonts
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
 
-
-
 //colors
 $color-1: #1C1C1D; //warna body / footer
 $color-2: #05090C; //warna navbar
@@ -21,10 +19,10 @@ $color-14: #000000;
 
 
 //style
-
 @mixin reset{
 	margin: 0;
 	padding: 0;	
+	box-sizing: border-box;
   ul,ol{
 	list-style: none;
    }
@@ -38,112 +36,272 @@ $color-14: #000000;
 	justify-content: $justify-content;
 	align-items: $align-items;
 }
-
+@mixin opacity-item($opacity){
+	opacity: $opacity;
+}
 
 @mixin container($size:null){
 	padding-left: $size;
 	padding-right: $size;
 }
 
-body{
+body,html{
 	@include reset();
 	font-family: 'Roboto', sans-serif;
-	background-color: $color-1;
-	overflow: hidden;
-}
-
-nav{
-	@include flex-box(space-around, center);
-	border:1px solid red;
 	background-color: $color-2;
-	height: 50px;
+
+}
+//navbar --------------
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 	width: 100%;
-	overflow: hidden;
-	.nav-brand{
-		cursor: pointer;
-		img{
-			width: 37px;
-			height: 37px;
-		}
-		img:hover{
-			opacity: 0.5;
-			transition: 0.4s all;	
-		}
-	}
 	.menu-list{
 		display: none;
-		color: $color-13;
-		font-size: 1.8em;
-	}
-	ul{	
-  	@include flex-box(space-between);
-		width: 50%;
-		border: 1px solid salmon;
-		a{
-			color: $color-9;
-			font-size: 1.2em;
+	 }
+	 .nav-brand{
+    @include opacity-item(0.5);
+		img{
+			width:40px;
+			height:40px;
 		}
-		a:hover{
-			opacity: 0.5;
-			transition: 0.4s all;
+	 }
+	 ul{
+		 display: flex;
+		 justify-content: space-between;
+		 width: 60%;
+		 a{
+			@include opacity-item(0.5);
+			font-size:1.2em;
+			color: $color-13;
+			font-weight: 400;
+		 }
 		}
+		.nav-brand:hover, a:hover{
+			@include opacity-item(0.8);
+			transition:0.3s ease-in;
+			cursor: pointer;
+		}
+}
+//header-----
+header{
+	display: flex;
+	color: white;
+	.header-hero{
+		display: flex;
+		 width: 50%;
+		justify-content:flex-end;
+		padding: 20px;
+		.header-hero-container{
+				text-align: center;
+			img{
+				width: 70%;	
+			}
+			h1{
+				margin-top: -2px;
+				color:$color-9;
+			}
+		}	
 	}
+	.header-content{
+		width: 60%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		.header-content-container{
+			width: 80%;
+			h3{
+				font-size: 2em;
+				color: $color-9;
+			}
+			h2{
+				text-align: justify;
+				font-size: 3em;
+				color:$color-8;
+			}
+			ul{
+				display: flex;
+				li{
+					padding: 10px;
+					a{
+						img{
+							width:100%;
+							height: 100%;
+						}
+					}
+				}
+			}
+		}
+	}	
 }
 
-/*responsive--> break points*/
-
-
-@media (max-width: 567px){
-	nav{
-		ul{
-			position: absolute;
-			flex-direction: column;
-			top:35px;
-			left: 0;
-			height: 100vh;
-			justify-content: space-evenly;
-			align-items: center;
+/*========Membuat main=======*/
+.main-about{
+	.content-about{
+   	display: flex;
+		background-color:$color-13;
+		border: 1px solid red;
+		padding-bottom: 50px;
+		.about-title{
+			width:50%;
+			text-align: justify;
+			border: 1px solid red;
+			display: flex;
+			justify-content: flex-end;
+			.about-title-container{
+				width: 70%;
+				padding: 10px;
+				border: 1px solid yellow;
+				display: flex;
+				flex-direction: column;
+				h1{
+					font-size: 4em;
+					text-decoration: underline;
+					color:$color-2;
+				}
+				p{
+					margin-top: -10px;
+					font-size: 1.5em;
+					font-weight: 400;
+					color: $color-3;
+					font-stretch:extra-expanded;
+				}
+			}
+		}
+		.about-title{
+			border: 1px solid green;
 			width: 100%;
-			z-index: 10;
-		}
-		.menu-list{
-			display: block;
 		}
 	}
-	
+	.about-tombol{
+		width: 50%;
+		display: flex;
+		align-items: center;
+		padding: 30px;
+		.about-tombol-container{
+			a{
+				font-size: 1em;
+				padding: 15px;
+				background-color:$color-10;
+				color: $color-13;
+				border-radius: 30px;
+		}
+	}
 }
-	
-
-
-@media (max-width: 768px){
-
 }
 
-@media (max-width: 992px){
 
-}
-@media (max-width:1200px){
+
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
 	nav{
-	
 		ul{
+			display: none;
+		}
+	}
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+	header{
+		flex-direction: column;
+		align-items: center;
+
+	.header-content{
+		text-align: center;
+		width: 80%;
+			.header-content-container{
+					width: 100%;
+								h3{
+				font-size: 1.4em;
+						}
+			h2{
+					font-size: 1.6em;
+				}	
+
+				ul{
+				justify-content: center;	
+				margin-left: -40px;
+				li{
+				
+					padding: 3px;
+					}
+			}
+		}
+	}
+	}
+
+
+/*========Membuat main=======*/
+.main-about{
+	.content-about{
+		flex-direction: column;
+		align-items: center;
+		.about-title{
+			justify-content: center;
+			.about-title-container{
+				width: 100%;
+				h1{
+					text-align: center;
+					font-size: 3em;
+				}
+				p{
+					font-size: 1.2em;
+				}
+			}
+		}
+		.about-title{
+			width: 100%;
+		}
+	}
+	.about-tombol{
+		padding: 20px;
+		.about-tombol-container{
+			a{
+				font-size: 1em;
+		}
+	}
+}
+}
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { 
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) {
+/*========Membuat main=======*/
+.main-about{
+	.content-about{
+		.about-title{
+			justify-content: flex-end;
+			.about-title-container{
+
+				width: 75%;
+			}
+		}
+		.about-title{
 			width: 70%;
 		}
 	}
-
+	.about-tombol{
+		padding: 20px;
+		.about-tombol-container{
+			a{
+				font-size: 1em;
+		}
+	}
+}
 }
 
-/*<div>Icons made by <a href="https://www.flaticon.com/authors/catalin-fertu" title="Catalin Fertu">Catalin Fertu</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*/
 
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
