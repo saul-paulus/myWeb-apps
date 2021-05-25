@@ -45,18 +45,20 @@ $color-14: #000000;
 	padding-right: $size;
 }
 
-body,html{
+body{
 	@include reset();
 	font-family: 'Roboto', sans-serif;
 	background-color: $color-2;
-
+	overflow-x: hidden;
 }
+
 //navbar --------------
 nav{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	width: 100%;
+	padding: 10px;
 	.menu-list{
 		display: none;
 	 }
@@ -90,7 +92,7 @@ header{
 	color: white;
 	.header-hero{
 		display: flex;
-		 width: 50%;
+		width: 50%;
 		justify-content:flex-end;
 		padding: 20px;
 		.header-hero-container{
@@ -138,21 +140,21 @@ header{
 
 /*========Membuat main=======*/
 .main-about{
+	background-color:$color-13;
+	border: 2px solid salmon;
+	width: 100%;
 	.content-about{
-   	display: flex;
-		background-color:$color-13;
-		border: 1px solid red;
+		width: 100%;
+  	 	display: flex;
 		padding-bottom: 50px;
 		.about-title{
-			width:50%;
+			width:75%;
 			text-align: justify;
-			border: 1px solid red;
 			display: flex;
 			justify-content: flex-end;
 			.about-title-container{
 				width: 70%;
 				padding: 10px;
-				border: 1px solid yellow;
 				display: flex;
 				flex-direction: column;
 				h1{
@@ -169,26 +171,22 @@ header{
 				}
 			}
 		}
-		.about-title{
-			border: 1px solid green;
-			width: 100%;
+		.about-tombol{
+			width: 25%;
+			display: flex;
+			align-items: center;
+			padding: 50px;
+			.about-tombol-container{
+				a{
+					font-size: 1em;
+					padding: 15px;
+					background-color:$color-10;
+					color: $color-13;
+					border-radius: 30px;
+				}
+			}
 		}
 	}
-	.about-tombol{
-		width: 50%;
-		display: flex;
-		align-items: center;
-		padding: 30px;
-		.about-tombol-container{
-			a{
-				font-size: 1em;
-				padding: 15px;
-				background-color:$color-10;
-				color: $color-13;
-				border-radius: 30px;
-		}
-	}
-}
 }
 
 
@@ -211,63 +209,59 @@ header{
 	header{
 		flex-direction: column;
 		align-items: center;
-
-	.header-content{
-		text-align: center;
-		width: 80%;
+		.header-content{
+			text-align: center;
+			width: 80%;
 			.header-content-container{
-					width: 100%;
-								h3{
-				font-size: 1.4em;
-						}
-			h2{
+				width: 100%;
+				h3{
+					font-size: 1.4em;
+				}
+				h2{
 					font-size: 1.6em;
 				}	
-
 				ul{
-				justify-content: center;	
-				margin-left: -40px;
+					justify-content: center;	
+					margin-left: -40px;
+				}
 				li{
-				
 					padding: 3px;
+				}
+			}
+		}
+	}
+	/*========Membuat main=======*/
+	.main-about{
+		.content-about{
+  	 		flex-direction: column;
+			   align-items: center;
+			.about-title{
+				width:100%;
+				justify-content: center;
+				text-align: center;
+				.about-title-container{
+					padding: 10px;
+					h1{
+						font-size: 4em;
+						text-decoration: underline;
+						color:$color-2;
 					}
+					p{
+						text-align: justify;
+						margin-top: -10px;
+						font-size: 1.5em;
+						font-weight: 400;
+						color: $color-3;
+						font-stretch:extra-expanded;
+					}
+				}
+			}
+			.about-tombol{
+				padding: 10px;
+				justify-content: center;
 			}
 		}
 	}
-	}
-
-
-/*========Membuat main=======*/
-.main-about{
-	.content-about{
-		flex-direction: column;
-		align-items: center;
-		.about-title{
-			justify-content: center;
-			.about-title-container{
-				width: 100%;
-				h1{
-					text-align: center;
-					font-size: 3em;
-				}
-				p{
-					font-size: 1.2em;
-				}
-			}
-		}
-		.about-title{
-			width: 100%;
-		}
-	}
-	.about-tombol{
-		padding: 20px;
-		.about-tombol-container{
-			a{
-				font-size: 1em;
-		}
-	}
-}
-}
 }
 
 // Large devices (desktops, less than 1200px)
@@ -277,33 +271,21 @@ header{
 // X-Large devices (large desktops, less than 1400px)
 @media (max-width: 1399.98px) {
 /*========Membuat main=======*/
-.main-about{
-	.content-about{
-		.about-title{
-			justify-content: flex-end;
-			.about-title-container{
-
-				width: 75%;
+	.main-about{
+		.content-about{
+			.about-title{
+				.about-title-container{
+					width: 80%;
+				}
+			}
+			.about-tombol{
+				width: 20%;
+				.about-tombol-container{
+					a{
+						font-size: 1em;
+					}
+				}
 			}
 		}
-		.about-title{
-			width: 70%;
-		}
-	}
-	.about-tombol{
-		padding: 20px;
-		.about-tombol-container{
-			a{
-				font-size: 1em;
-		}
 	}
 }
-}
-
-
-}
-
-
-
-
-
