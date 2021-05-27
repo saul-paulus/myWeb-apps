@@ -44,6 +44,13 @@ $color-14: #000000;
 	padding-left: $size;
 	padding-right: $size;
 }
+@mixin tombol-selengkapnya{
+		font-size: 1em;
+		padding: 15px;
+		background-color:$color-10;
+		color: $color-13;
+		border-radius: 30px;
+}
 
 body, html{
 	@include reset();
@@ -54,7 +61,7 @@ body, html{
 	height: 100%;
 }
 
-//navbar --------------
+/*==============NAVBAR=========================*/
 nav{
 	display: flex;
 	.nav-container{
@@ -63,26 +70,22 @@ nav{
 		align-items: center;
 		width: 100%;
 		padding: 10px;
-		border: 1px solid yellow;
 		z-index: 10;
 		.menu-list-container{
 			.menu-list{
 				display: none;
 				color: $color-9;
-				border: 1px solid red;
 			}
 		}
 		.nav-brand{
 			width: 30%;
-			border: 1px solid red;
-  			@include opacity-item(0.5);
+  		@include opacity-item(0.5);
 			img{
 				width:40px;
 				height:40px;
 			}
 		}
 		ul{
-			border: 1px solid red;	
 			width: 50%;
 		 	display: flex;
 		 	justify-content: space-evenly;
@@ -100,9 +103,9 @@ nav{
 		}
 	}
 }
-//header-----
+/*================================================*/
+/*=================header=========================*/
 header{
-	border:1px solid green;
 	display: flex;
 	color: white;
 	.header-hero{
@@ -156,7 +159,6 @@ header{
 /*========Membuat main About=======*/
 .main-about{
 	background-color:$color-13;
-	border: 2px solid salmon;
 	width: 100%;
 	padding-bottom: 40px;
 	.content-about{
@@ -194,30 +196,68 @@ header{
 			padding: 50px;
 			.about-tombol-container{
 				a{
-					font-size: 1em;
-					padding: 15px;
-					background-color:$color-10;
-					color: $color-13;
-					border-radius: 30px;
+						@include tombol-selengkapnya();	
 				}
 			}
 		}
 	}
 }
-
+/*======================================================*/
 /*===========Membuat main project===============*/
 .main-project{
-	height: 400px;
 	.content-project{
-		color:white;
-		text-align: center;
+		border: 1px solid red;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color:$color-13;
+		padding-bottom: 50px;
 		.project-title{
-			h1{
-				font-size: 30px;
+			border: 1px solid yellow;
+			h1{	
+					font-size: 4em;
+					text-decoration: underline;
+					color:$color-13;
+				}
+		}
+		.project-feature{
+			border: 1px solid blue;
+			width: 80%;
+			display: grid;
+			grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+			justify-content: space-evenly;
+			margin-bottom:40px;
+			gap:10px;
+			.project-feature-container{
+				border: 1px solid salmon;
+				width: 100%;
+				text-align: center;
+				img{
+					width: 180px;
+					height: 180px;
+				}
+			}	
+		}
+		.project-tombol{
+			a{
+				@include tombol-selengkapnya();
 			}
 		}
 	}
 }
+/*=========================================================*/
+/*=======service====================*/
+.main-service{
+	background-color: $color-13;
+	.content-service{
+		display: flex;
+
+	}
+}
+
+
+/*==============================================*/
+
 
 // X-Small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
@@ -248,8 +288,7 @@ header{
 
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) {
-
-//navbar --------------
+//navbar ----
 nav{
 	.nav-container{
 		.nav-brand{
@@ -260,61 +299,57 @@ nav{
 		}
 	}
 }
-
-
-
-
-	/*====header====*/
-	header{
-		flex-direction: column;
-		align-items: center;
-		.header-content{
-			text-align: center;
-			width: 80%;
-			.header-content-container{
-				width: 100%;
-				h3{
-					font-size: 1.4em;
-				}
-				h2{
-					font-size: 1.6em;
-				}	
-				ul{
-					justify-content: center;	
-					margin-left: -40px;
-				}
-				li{
-					padding: 3px;
-				}
+/*====header====*/
+header{
+	flex-direction: column;
+	align-items: center;
+	.header-content{
+		text-align: center;
+		width: 80%;
+		.header-content-container{
+			width: 100%;
+			h3{
+				font-size: 1.4em;
+			}
+			h2{
+				font-size: 1.6em;
+			}	
+			ul{
+				justify-content: center;	
+				margin-left: -40px;
+			}
+			li{
+				padding: 3px;
 			}
 		}
 	}
-	/*========Membuat main=======*/
-	.main-about{
-		.content-about{
-  	 		flex-direction: column;
-			   align-items: center;
-			.about-title{
-				width:100%;
-				justify-content: center;
-				text-align: center;
-				.about-title-container{
-					padding: 10px;
-					h1{
-						font-size: 4em;
-						text-decoration: underline;
-						color:$color-2;
-					}
-					p{
-						text-align: justify;
-						margin-top: -10px;
-						font-size: 1.5em;
-						font-weight: 400;
-						color: $color-3;
-						font-stretch:extra-expanded;
-					}
+}
+/*========Membuat main=======*/
+.main-about{
+	.content-about{
+		flex-direction: column;
+	 	align-items: center;
+		.about-title{
+			width:100%;
+			justify-content: center;
+			text-align: center;
+			.about-title-container{
+				padding: 10px;
+				h1{
+					font-size: 4em;
+					text-decoration: underline;
+					color:$color-2;
+				}
+				p{
+					text-align: justify;
+					margin-top: -10px;
+					font-size: 1.5em;
+					font-weight: 400;
+					color: $color-3;
+					font-stretch:extra-expanded;
 				}
 			}
+		}
 			.about-tombol{
 				padding: 10px;
 				justify-content: center;
@@ -330,13 +365,13 @@ nav{
 // X-Large devices (large desktops, less than 1400px)
 @media (max-width: 1399.98px) {
 /*========Membuat main=======*/
-	.main-about{
-		.content-about{
-			.about-title{
-				.about-title-container{
-					width: 80%;
-				}
+.main-about{
+	.content-about{
+		.about-title{
+		.about-title-container{
+				width: 80%;
 			}
+		}
 			.about-tombol{
 				width: 20%;
 				.about-tombol-container{
