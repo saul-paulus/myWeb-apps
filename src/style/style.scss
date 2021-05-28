@@ -447,8 +447,9 @@ header{
 
 
 	/*======desain service================*/
-
-
-
-
+	.main-service{
+		.content-service{
+    	flex-direction: column;	
+		}
+	}
 }
