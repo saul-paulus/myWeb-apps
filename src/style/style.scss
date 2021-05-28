@@ -210,28 +210,24 @@ header{
 /*===========Membuat main project===============*/
 .main-project{
 	.content-project{
-		border: 1px solid red;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		color:$color-13;
 		padding-bottom: 50px;
 		.project-title{
-			border: 1px solid yellow;
 			h1{	
 				@include title-font($color-13);	
 				}
 		}
 		.project-feature{
-			border: 1px solid blue;
-			width: 80%;
+				width: 80%;
 			display: grid;
 			grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
 			justify-content: space-evenly;
 			margin-bottom:40px;
 			gap:10px;
 			.project-feature-container{
-				border: 1px solid salmon;
 				width: 100%;
 				text-align: center;
 				img{
@@ -264,7 +260,7 @@ header{
 	  	justify-content: flex-end;	
 			.service-hero-container{
 				border:1px solid green;
-				width:80%;
+				width:90%;
 				img{
 					width: 100%;
 					height: 100%;
@@ -445,11 +441,69 @@ header{
 
 
 
-
-	/*======desain service================*/
-	.main-service{
-		.content-service{
-    	flex-direction: column;	
+/*=======service====================*/
+.main-service{
+	.content-service{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		.service-hero{
+			width:100%;
+			display: flex;
+	  	justify-content: center;	
+			.service-hero-container{
+				border:1px solid green;
+				width:60%;
+		   		}
+		 }
+		 .service-title{
+			 width: 100%;
+			 display: flex;
+			 align-items: center;
+			 justify-content:center;
+		  	.service-title-container{
+					width:70%;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				  h1{
+					 border:1px solid salmon;
+					 @include title-font($color-2);
+				  }
+				  p{
+					  border:1px solid red;
+						font-size: 2em;
+						font-weight: 500;
+				   }
+					 .service-title-img{	
+						 margin-top: 40px;	
+						 width: 100%;
+						 grid-template-columns: 1fr 1fr;
+						 .service-title-img-container{ 
+							img{
+						 		width:170px;
+						 		height: 170px;
+					 			}
+								a{
+									font-size: 1em;
+									padding: 20px;
+								}
+					 		}
+						}
+			 		}
+		 		}
 		}
-	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 }
