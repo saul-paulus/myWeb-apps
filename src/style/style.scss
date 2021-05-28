@@ -255,14 +255,16 @@ header{
 		display: flex;
 		width: 100%;
 		border: 1px solid red;
+		padding-bottom: 30px;
+
 		.service-hero{
 			border: 1px solid blue;
 			width:50%;
 			display: flex;
-		justify-content: flex-end;	
+	  	justify-content: flex-end;	
 			.service-hero-container{
 				border:1px solid green;
-				width:70%;
+				width:80%;
 				img{
 					width: 100%;
 					height: 100%;
@@ -276,24 +278,41 @@ header{
 			 width: 50%;
 		  	border:1px solid yellow;
 			  .service-title-container{
+
 				  border:1px solid salmon;
+					display: flex;
+					flex-direction: column;
 				  h1{
 					 border:1px solid salmon;
 					 @include title-font($color-2);
 				  }
 				  p{
 					  border:1px solid red;
+						font-size: 2em;
+						font-weight: 500;
 				   }
-				 .service-title-img-container{
-				  	border:1px solid blue;	
-						img{
-						 width:150px;
-						 height: 150px;
-					 }
-				 }
-			 }
-		 }
-	}
+					 .service-title-img{
+						 margin-top: 40px;	
+						 display: grid;
+						 grid-template-columns: repeat(auto-fit,minmax(1fr, 1fr));
+						 .service-title-img-container{
+				  		border:1px solid blue;
+							display: flex;
+							flex-direction: column;
+							align-items:center;
+							img{
+						 		width:150px;
+						 		height: 150px;
+					 			}
+								a{
+									font-size: 1em;
+									padding: 20px;
+								}
+					 		}
+						}
+			 		}
+		 		}
+		}
 }
 
 
@@ -423,4 +442,13 @@ header{
 			}
 		}
 	}
+
+
+
+
+	/*======desain service================*/
+
+
+
+
 }
