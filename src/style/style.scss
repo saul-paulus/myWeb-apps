@@ -52,6 +52,12 @@ $color-14: #000000;
 		border-radius: 30px;
 }
 
+@mixin title-font($nameColor){
+	font-size: 3em;
+	text-decoration: underline;
+	color:$nameColor;
+}
+
 body, html{
 	@include reset();
 	font-family: 'Roboto', sans-serif;
@@ -176,9 +182,7 @@ header{
 				display: flex;
 				flex-direction: column;
 				h1{
-					font-size: 4em;
-					text-decoration: underline;
-					color:$color-2;
+					@include title-font($color-2);
 				}
 				p{
 					margin-top: -10px;
@@ -215,9 +219,7 @@ header{
 		.project-title{
 			border: 1px solid yellow;
 			h1{	
-					font-size: 4em;
-					text-decoration: underline;
-					color:$color-13;
+				@include title-font($color-13);	
 				}
 		}
 		.project-feature{
@@ -256,17 +258,28 @@ header{
 			border: 1px solid blue;
 			.service-hero-container{
 				border:1px solid green;
-			}
-		}
-		.service-title{
-			border:1px solid yellow;
-			.service-title-container{
-				border:1px solid salmon;
-				.service-title-img-container{
-					border:1px solid blue;
-				}
-			}
-		}
+	   		}
+		 }
+		 .service-title{
+		  	border:1px solid yellow;
+			  .service-title-container{
+				  border:1px solid salmon;
+				  h1{
+					 border:1px solid salmon;
+					 @include title-font($color-2);
+				  }
+				  p{
+					  border:1px solid red;
+				   }
+				 .service-title-img-container{
+				  	border:1px solid blue;
+					  img{
+						 width:150px;
+						 height: 150px;
+					 }
+				 }
+			 }
+		 }
 	}
 }
 
