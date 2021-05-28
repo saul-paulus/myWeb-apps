@@ -253,14 +253,27 @@ header{
 	background-color: $color-13;
 	.content-service{
 		display: flex;
+		width: 100%;
 		border: 1px solid red;
 		.service-hero{
 			border: 1px solid blue;
+			width:50%;
+			display: flex;
+		justify-content: flex-end;	
 			.service-hero-container{
 				border:1px solid green;
+				width:70%;
+				img{
+					width: 100%;
+					height: 100%;
+					display: block;
+					border: 1px solid black;
+		
+				}
 	   		}
 		 }
 		 .service-title{
+			 width: 50%;
 		  	border:1px solid yellow;
 			  .service-title-container{
 				  border:1px solid salmon;
@@ -272,8 +285,8 @@ header{
 					  border:1px solid red;
 				   }
 				 .service-title-img-container{
-				  	border:1px solid blue;
-					  img{
+				  	border:1px solid blue;	
+						img{
 						 width:150px;
 						 height: 150px;
 					 }
