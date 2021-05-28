@@ -251,7 +251,22 @@ header{
 	background-color: $color-13;
 	.content-service{
 		display: flex;
-
+		border: 1px solid red;
+		.service-hero{
+			border: 1px solid blue;
+			.service-hero-container{
+				border:1px solid green;
+			}
+		}
+		.service-title{
+			border:1px solid yellow;
+			.service-title-container{
+				border:1px solid salmon;
+				.service-title-img-container{
+					border:1px solid blue;
+				}
+			}
+		}
 	}
 }
 
