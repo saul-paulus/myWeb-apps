@@ -250,7 +250,6 @@ header{
 	.content-service{
 		display: flex;
 		align-items: center;
-		padding-bottom: 30px;
 		.service-hero{
 			width:50%;
 			display: flex;
@@ -303,6 +302,13 @@ header{
 		 		}
 		}
 }
+
+/*================main - skill and soft skill=================*/
+.main-skill{
+	background-color:$color-12;
+}
+
+
 
 
 /*==============================================*/
