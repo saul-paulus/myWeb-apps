@@ -252,7 +252,6 @@ header{
 		width: 100%;
 		border: 1px solid red;
 		padding-bottom: 30px;
-
 		.service-hero{
 			border: 1px solid blue;
 			width:50%;
@@ -285,24 +284,30 @@ header{
 				  p{
 					  border:1px solid red;
 						font-size: 2em;
-						font-weight: 500;
+						font-weight: 400;
+						color: $color-3;
 				   }
 					 .service-title-img{
 						 margin-top: 40px;	
 						 display: grid;
-						 grid-template-columns: repeat(auto-fit,minmax(400px, 1fr));
-						 .service-title-img-container{
-				  		border:1px solid blue;
+						 grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+						 gap:10px;
+						 border:1px solid greenyellow;
+						 .service-title-img-container{	
+				  		border:2px solid darkred;
 							display: flex;
 							flex-direction: column;
 							align-items:center;
 							img{
-						 		width:150px;
-						 		height: 150px;
+								border: 1px solid salmon;
+						 		width:180px;
+						 		height: 180px;
 					 			}
 								a{
+									border:1px solid green;
 									font-size: 1em;
 									padding: 20px;
+									color: $color-10;
 								}
 					 		}
 						}
@@ -337,55 +342,8 @@ header{
 		}
 
 	}
-/*=======service====================*/
-.main-service{
-	.content-service{
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		.service-hero{
-			width:100%;
-			display: flex;
-	  	justify-content: center;	
-			.service-hero-container{
-				border:1px solid green;
-				width:60%;
-		   		}
-		 }
-		 .service-title{
-			 width: 100%;
-			 display: flex;
-			 align-items: center;
-			 justify-content:center;
-		  	.service-title-container{
-					width:70%;
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-				  h1{
-					 border:1px solid salmon;
-					 @include title-font($color-2);
-				  }
-				  p{
-					  border:1px solid red;
-						font-size: 2em;
-						font-weight: 500;
-				   }
-					 .service-title-img{		
-						 width: 100%;
-						 .service-title-img-container{ 
-							img{
-						 		width:170px;
-						 		height: 170px;
-					 			}
-					 		}
-						}
-			 		}
-		 		}
-		}
 }
 
-}
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {}
@@ -487,66 +445,27 @@ header{
 		}
 	}
 
-
-
 /*=======service====================*/
 .main-service{
 	.content-service{
-		display: flex;
 		flex-direction: column;
-		width: 100%;
+		align-items: center;
 		.service-hero{
 			width:100%;
-			display: flex;
 	  	justify-content: center;	
 			.service-hero-container{
-				border:1px solid green;
-				width:60%;
-		   		}
+				width:80%;
+			}
 		 }
 		 .service-title{
-			 width: 100%;
-			 display: flex;
-			 align-items: center;
-			 justify-content:center;
-		  	.service-title-container{
-					width:70%;
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-				  h1{
-					 border:1px solid salmon;
-					 @include title-font($color-2);
-				  }
-				  p{
-					  border:1px solid red;
-						font-size: 2em;
-						font-weight: 500;
-				   }
-					 .service-title-img{	
-						 margin-top: 40px;	
-						 width: 100%;	
-						 .service-title-img-container{ 
-							img{
-						 		width:170px;
-						 		height: 170px;
-					 			}
-					 		}
+			 width: 90%;
+			  .service-title-container{
+					align-items: center;	
+					 .service-title-img{
+						 width: 100%;
 						}
 			 		}
 		 		}
-		}
-}
-
-
-
-
-
-
-
-
-
-
-
-
+		} 
+	}
 }
