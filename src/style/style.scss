@@ -113,7 +113,6 @@ nav{
 /*=================header=========================*/
 header{
 	display: flex;
-	color: white;
 	.header-hero{
 		display: flex;
 		width: 50%;
@@ -217,15 +216,16 @@ header{
 		padding-bottom: 50px;
 		.project-title{
 			h1{	
-				@include title-font($color-13);	
+				@include title-font($color-13);
+				padding-bottom: 80px;
 				}
 		}
 		.project-feature{
-				width: 80%;
+			width: 80%;
 			display: grid;
 			grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
 			justify-content: space-evenly;
-			margin-bottom:40px;
+			margin-bottom:80px;
 			gap:10px;
 			.project-feature-container{
 				width: 100%;
@@ -253,58 +253,59 @@ header{
 		.service-hero{
 			width:50%;
 			display: flex;
-	  	justify-content: flex-end;	
+	  		justify-content: flex-end;	
 			.service-hero-container{
 				width:80%;
 				img{
 					width: 100%;
 					height: 100%;
 					display: block;
-						}
+				}
 	   		}
-		 }
-		 .service-title{
-			 width: 50%;
-			  .service-title-container{
-					width: 90%;
-					display: flex;
-					flex-direction: column;
-					align-items:center;	
-				  h1{
-					 @include title-font($color-2);
-				  }
-				  p{
-						font-size: 2em;
-						font-weight: 400;
-						color: $color-3;
-				   }
-					 .service-title-img{
-						 width: 100%;	
-						 display: grid;
-						 grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
-						 gap:10px;
-						 .service-title-img-container{	
-							display: flex;
-							flex-direction: column;
-							align-items:center;
-							img{
-						 		width:180px;
-						 		height: 180px;
-					 			}
-								a{
-									font-size: 1em;
-									padding: 20px;
-									color: $color-10;
-								}
-					 		}
-						}
-			 		}
-		 		}
 		}
+		.service-title{
+			width: 50%;
+			.service-title-container{
+				width: 90%;
+				display: flex;
+				flex-direction: column;
+				align-items:center;	
+				h1{
+				 @include title-font($color-2);
+				}
+				p{
+					font-size: 2em;
+					font-weight: 400;
+					color: $color-3;
+				}
+				.service-title-img{
+					width: 100%;	
+				    display: grid;
+					grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+					gap:10px;
+					.service-title-img-container{	
+						display: flex;
+						flex-direction: column;
+						align-items:center;
+						img{
+					 		width:180px;
+					 		height: 180px;
+							}
+						a{
+							font-size: 1em;
+							padding: 20px;
+							color: $color-10;
+						}
+					}
+				}
+		 	}
+	 	}
+	}
 }
 
 /*================main - skill and soft skill=================*/
 .main-skill{
+	margin-top: -20px;
 	background-color:$color-12;
 }
 
