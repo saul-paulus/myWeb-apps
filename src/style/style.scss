@@ -58,6 +58,29 @@ $color-14: #000000;
 	color:$nameColor;
 }
 
+@mixin skillOfSoftSkill-property{
+	display: flex;
+	align-items: center;
+	padding: 10px;
+		img{
+			border: 1px solid salmon;
+			display: block;
+			width: 60px;
+			height: 60px;
+		}
+		h3{
+			padding: 5px;
+			font-size: 0.8em;
+			border: 1px solid green;
+		}
+		p{
+			padding: 10px;
+			font-size: 0.7em;
+			font-weight: 400;
+			border:1px solid blue;
+		}
+}
+
 body, html{
 	@include reset();
 	font-family: 'Roboto', sans-serif;
@@ -288,8 +311,8 @@ header{
 						flex-direction: column;
 						align-items:center;
 						img{
-					 		width:180px;
-					 		height: 180px;
+					 		width:150px;
+					 		height: 150px;
 							}
 						a{
 							font-size: 1em;
@@ -305,12 +328,89 @@ header{
 
 /*================main - skill and soft skill=================*/
 .main-skill{
-	margin-top: -20px;
 	background-color:$color-12;
+	padding-bottom: 30px;
+	.skill-content{
+		div{
+			border: 1px solid green;
+		}
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+				'skillAndSoft skillAndSoft'
+				'skillOfPrograming skillOfPrograming'
+				'frontEnd backEnd'
+				'frontEndContain backEndContain'
+				'softSkill softSkill';
+	}
+	.skill-title{
+		grid-area: skillAndSoft;
+		.skill-title-container{
+			text-align: center;
+			h1{
+				@include title-font($color-2);
+			}
+		}
+	}
+	.skill-title-programing{
+		grid-area: skillOfPrograming;
+		text-align: center;
+	}
+	.skill-title-front-end{
+		text-align: center;
+		grid-area: frontEnd;
+	}
+	.front-end-container{
+		display: flex;
+		justify-content: flex-end; 
+		grid-area: frontEndContain;
+		.front-end-container-prog{
+  		display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			width: 90%;
+			.front-end-prog{
+				@include skillOfSoftSkill-property();
+			}
+		}
+	}
+	.skill-title-back-end{
+		text-align: center;
+		grid-area: backEnd;
+	}
+	.back-end-container{
+  	grid-area: backEndContain;
+		display: flex;
+		justify-content: flex-start;
+		.back-end-container-prog{
+			display: flex;
+			justify-content: flex-start;
+					display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			width: 90%;
+			.back-end-prog{
+			@include skillOfSoftSkill-property();
+			}
+		}
+	}
+	.skill-title-soft{
+		text-align: center;
+		grid-area: softSkill;
+		.skill-title-soft-container{
+				display: flex;	
+				justify-content: center;
+			.skill-soft-container-prog{
+				width: 50%;
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				justify-content: center;
+				align-items: center;
+				.soft-skill-prog{
+					@include skillOfSoftSkill-property();
+				}
+			}
+		}
+	}
 }
-
-
-
 
 /*==============================================*/
 // X-Small devices (portrait phones, less than 576px)
@@ -326,14 +426,52 @@ header{
 			.menu-list-container{
 				border: 1x solid white;
 				.menu-list{
-
 					display:inline-block;
 				}
 		
 			}
 	
 		}
-
+	}
+/*================main - skill and soft skill=================*/
+.main-skill{	
+	.skill-content{
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+		  	'skillAndSoft skillAndSoft'
+				'skillOfPrograming skillOfPrograming'
+				'frontEnd frontEnd'
+				'frontEndContain frontEndContain'
+				'backEnd backEnd'
+				'backEndContain backEndContain'
+				'softSkill softSkill';
+	}
+	.skill-title{
+		grid-area: skillAndSoft;
+		.skill-title-container{
+			text-align: center;
+			h1{
+				@include title-font($color-2);
+			}
+		}
+	}
+	.front-end-container{
+		justify-content: center;
+		.front-end-container-prog{
+ 			width: 80%;
+		}
+	}
+	.back-end-container{
+		justify-content: center;
+		.back-end-container-prog{
+			width: 80%;
+		}
+	}
+	.skill-title-soft{
+		.skill-title-soft-container{
+				justify-content: center;
+			}
+		}
 	}
 }
 
@@ -415,10 +553,6 @@ header{
 
 // Large devices (desktops, less than 1200px)
 @media (max-width: 1199.98px) { 
-}
-
-// X-Large devices (large desktops, less than 1400px)
-@media (max-width: 1399.98px) {
 /*========Membuat main=======*/
 .main-about{
 	.content-about{
@@ -462,4 +596,10 @@ header{
 		 		}
 		} 
 	}
+
+
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) {
 }
