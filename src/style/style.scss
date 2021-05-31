@@ -63,7 +63,6 @@ $color-14: #000000;
 	align-items: center;
 	padding: 10px;
 		img{
-			border: 1px solid salmon;
 			display: block;
 			width: 60px;
 			height: 60px;
@@ -71,13 +70,11 @@ $color-14: #000000;
 		h3{
 			padding: 5px;
 			font-size: 0.8em;
-			border: 1px solid green;
 		}
 		p{
-			padding: 10px;
+			padding: 5px;
 			font-size: 0.7em;
 			font-weight: 400;
-			border:1px solid blue;
 		}
 }
 
@@ -331,9 +328,6 @@ header{
 	background-color:$color-12;
 	padding-bottom: 30px;
 	.skill-content{
-		div{
-			border: 1px solid green;
-		}
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 
@@ -382,16 +376,16 @@ header{
 		display: flex;
 		justify-content: flex-start;
 		.back-end-container-prog{
-			display: flex;
-			justify-content: flex-start;
-					display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			width: 90%;
-			.back-end-prog{
-			@include skillOfSoftSkill-property();
-			}
-		}
-	}
+			 display: flex;
+			 justify-content: flex-start;
+			 display: grid;
+			 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			 width: 90%;
+			 .back-end-prog{
+			  @include skillOfSoftSkill-property();
+			 }
+		 }
+	 }
 	.skill-title-soft{
 		text-align: center;
 		grid-area: softSkill;
@@ -412,6 +406,92 @@ header{
 	}
 }
 
+/*==========design of contact-main*/
+.main-contact{
+	background-color: $color-13;
+	padding: 40px 0;
+	.contact-content{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.contact-title{
+			.contact-title-container{
+				padding: 10px;
+				h1{
+					@include title-font($color-2);
+				}
+			}
+		}
+		.contact-form{
+			width: 50%;
+			label{
+				padding: 10px 0;
+				font-size: 1.2em;
+			}	
+			input[type=text]{
+				border: 1px solid $color-11;
+				border-radius: 5px;
+				background-repeat: no-repeat;
+				background-position: 10px 10px;
+				background-color: #f1f1f1;
+				width: 100%;
+				padding: 8px 15px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				font-size: 16px;
+			}
+			textarea{
+				width: 100%;
+				height: 150px;
+				padding: 12px 20px;
+				box-sizing: border-box;
+				border: 1px solid $color-11;
+				border-radius: 5px;
+				background-color: #f1f1f1;
+				font-size: 16px;
+				resize: none;
+			}
+			select{
+				width: 100%;
+				padding: 8px 15px;
+				border: 1px solid $color-11;
+				border-radius: 4px;
+				background-color: #f1f1f1;
+				font-size: 16px;
+			}
+			input[type=button]{
+				font-size: 20px;
+				background-color: $color-10;
+				color:$color-13;
+				border: none;
+				border-radius: 5px;
+				text-decoration: none;
+				width: 100%;
+				margin: 10px 0;
+				padding: 10px;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+/*===========Membuat footer=============*/
+.main-footer{
+	background-color: $color-4;
+	.footer-title{
+		display: flex;
+		justify-content: center;
+		.footer-title-container{
+			p{
+				text-align: center;
+				color: $color-13;
+				font-size: 1em;
+				padding: 40px;
+			}
+		}
+	}
+}
+
 /*==============================================*/
 // X-Small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
@@ -422,10 +502,8 @@ header{
 				position: absolute;
 				display: none;
 			}
-
 			.menu-list-container{
-				border: 1x solid white;
-				.menu-list{
+					.menu-list{
 					display:inline-block;
 				}
 		
@@ -546,6 +624,19 @@ header{
 			.about-tombol{
 				padding: 10px;
 				justify-content: center;
+			}
+		}
+	}
+	
+/*==========design of contact-main*/
+	.main-contact{
+		.contact-content{
+			.contact-form{
+				width: 90%;
+				label{
+					padding: 10px 0;
+					font-size: 1.2em;
+				}	
 			}
 		}
 	}
