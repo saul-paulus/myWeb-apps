@@ -1,3 +1,2 @@
 # my-framework
-# myWeb-portfolio
-# myWeb-portfolio
+ini adalah halaman web yang dibuat tanpa framework
